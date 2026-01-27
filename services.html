@@ -1,0 +1,371 @@
+<!--
+===========================================
+SERVICES PAGE
+===========================================
+Shows all training services offered.
+
+Layout:
+- Mobile: Accordion (tap to expand)
+- Desktop: 2-column grid of cards
+
+To edit services:
+- Mobile accordion: Find accordion-item elements (line 50+)
+- Desktop cards: Find service-card elements (line 180+)
+- Service tags: Edit the service-item spans (line 35)
+===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - The Armyard</title>
+    <meta name="description" content="{% block description %}Real Athletes, Real Results - Helping athletes increase velocity, rehab from injury, and earn college opportunities.{% endblock %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/armyard_logo_circle.png">
+    <!-- For older browsers -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/armyard_logo_circle.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- ===========================================
+         HEADER / NAVIGATION
+         =========================================== -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo - Click to go home -->
+            <a href="/" class="header-logo">
+                <span class="header-logo-text">The Armyard</span>
+            </a>
+            
+            <!-- Mobile Menu Button (hamburger) -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                
+                <a href="/" class="nav-link-home {% if request.path == '/' %}active{% endif %}">Home</a>
+                <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a>
+                <a href="/services" class="nav-link {% if request.path == '/services' %}active{% endif %}">Services</a>
+                <!--<a href="/merch" class="nav-link {% if request.path == '/merch' %}active{% endif %}">Merch</a>!-->
+                <a href="/contact" class="nav-link {% if request.path == '/contact' %}active{% endif %}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===========================================
+            SERVICES HEADER
+            Title and service tags
+        =========================================== -->
+        <div class="services-overview">
+            <h1>What We Do</h1>
+            
+            <!-- Service Tags (visible on tablet+) -->
+            <div class="services-list">
+                <span class="service-item">Pitching Programs</span>
+                <span class="service-item">Hitting Lessons</span>
+                <span class="service-item">Cage Rentals</span>
+                <span class="service-item">Winter Workouts</span>
+                <span class="service-item">Team Facility Rental</span>
+                <span class="service-item">HitTrax Leagues</span>
+            </div>
+
+            <!-- ===========================================
+                MOBILE ACCORDION
+                Shown on phones, hidden on larger screens
+            =========================================== -->
+            <div class="services-accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Pitching Programs</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Pitching Programs</h4>
+                            <p>One-on-one private pitching instruction focused on mechanics, control, and velocity development. Our professional coaches work with players of all skill levels to improve their pitching fundamentals.</p>
+                            <ul>
+                                <li>60-minute sessions</li>
+                                <li>Professional coaching</li>
+                                <li>Mechanical analysis</li>
+                                <li>Velocity development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Hitting Lessons</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Hitting Lessons (with HitTrax)</h4>
+                            <p>Advanced hitting instruction where our experienced coaches combine traditional hitting fundamentals with data-driven insights to maximize your offensive potential.</p>
+                            <ul>
+                                <li>60-minute sessions</li>
+                                <li>Personalized instruction</li>
+                                <li>Mechanical breakdowns</li>
+                                <li>Launch angle & exit velocity data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Cage Rentals</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Cage Rentals</h4>
+                            <p>Rent our batting cages for individual practice or small group training sessions. Includes access to a pitching machine and HitTrax</p>
+                            <ul>
+                                <li>Hourly rentals available</li>
+                                <li>Pitching machine available</li>
+                                <li>HitTrax gamified training</li>
+                                <li>Individual or group use</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Winter Workouts</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Winter Workouts</h4>
+                            <p>Stay sharp during the off-season with our comprehensive winter training programs. Available for both teams and individual players.</p>
+                            <ul>
+                                <li>Team and individual programs</li>
+                                <li>Strength and conditioning</li>
+                                <li>Skill development</li>
+                                <li>Off-season preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Team Facility Rental</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Team Facility Rental</h4>
+                            <p>Rent our entire facility for team practices, training camps, or special events. Great for travel teams, schools, and organizations.</p>
+                            <ul>
+                                <li>Full facility access</li>
+                                <li>Batting cage</li>
+                                <li>Open bullpens</li>
+                                <li>Custom programs available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>HitTrax Leagues</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content hittrax-content">
+                        <div class="accordion-body">
+                            <h4>HitTrax Leagues</h4>
+                            <p>Join our HitTrax leagues and test your skills against other players. Fun, competitive environment with detailed performance tracking.</p>
+                            <img src="https://www.hittrax.com/wp-content/uploads/2024/03/hero-ht-home2-768x768.png" alt="HitTrax Technology" class="hittrax-image">
+                            <ul>
+                                <li>Gamified training sessions</li>
+                                <li>Competitive league play</li>
+                                <li>Performance tracking</li>
+                                <li>Launch angle & exit velocity data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Pitching Programs</h3>
+                <p>One-on-one private pitching instruction focused on mechanics, control, and velocity development. Our professional coaches work with players of all skill levels to improve their pitching fundamentals.</p>
+                <ul>
+                    <li>60-minute sessions</li>
+                    <li>Professional coaching</li>
+                    <li>Mechanical analysis</li>
+                    <li>Velocity development</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Hitting Lessons (with HitTrax)</h3>
+                <p>Advanced hitting instruction where our experienced coaches combine traditional hitting fundamentals with data-driven insights to maximize your offensive potential.</p>
+                <ul>
+                    <li>60-minute sessions</li>
+                    <li>Personalized instruction</li>
+                    <li>Mechanical breakdowns</li>
+                    <li>Launch angle & exit velocity data</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Cage Rentals</h3>
+                <p>Rent our batting cages for individual practice or small group training sessions. Includes access to a pitching machine and HitTrax</p>
+                <ul>
+                    <li>Hourly rentals available</li>
+                    <li>Pitching machine available</li>
+                    <li>HitTrax gamified training</li>
+                    <li>Individual or group use</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Winter Workouts</h3>
+                <p>Stay sharp during the off-season with our comprehensive winter training programs. Available for both teams and individual players.</p>
+                <ul>
+                    <li>Team and individual programs</li>
+                    <li>Strength and conditioning</li>
+                    <li>Skill development</li>
+                    <li>Off-season preparation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Team Facility Rental</h3>
+                <p>Rent our entire facility for team practices, training camps, or special events. Great for travel teams, schools, and organizations.</p>
+                <ul>
+                    <li>Full facility access</li>
+                    <li>Batting cage</li>
+                    <li>Open bullpens</li>
+                    <li>Custom programs available</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>HitTrax Leagues</h3>
+                <p>Join our HitTrax leagues and test your skills against other players. Fun, competitive environment with detailed performance tracking.</p>
+                <ul>
+                    <li>Gamified training sessions</li>
+                    <li>Competitive league play</li>
+                    <li>Performance tracking</li>
+                    <li>Launch angle & exit velocity data</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Ready to Train?</h2>
+            <p>Contact Terry Sr to schedule your next session or learn more about our programs.</p>
+            <div class="contact-info-button">
+                <a href="tel:516-506-5422" class="contact-button">Call: 516-506-5422</a>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- ===========================================
+         FOOTER
+         =========================================== -->
+    <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">The Armyard</h3>
+                    <p class="footer-description">Helping athletes increase velocity, rehab from injury, and earn college opportunities — all through a proven system built around individualized training and results.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <a href="tel:516-506-5422">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </a>
+                            </svg>
+                            <span><a href="tel:516-506-5422">516-506-5422</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>thearmyard@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span>217 Central Ave<br>Farmingdale, NY</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/armyard_" class="social-link" aria-label="Follow us on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Instagram
+                        </a>
+                        <a href="https://www.facebook.com/arm.yard#" class="social-link" aria-label="Follow us on Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Armyard Bullpens. All rights reserved.</p>
+            </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+                    
+            // Close all accordion items
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+                    
+            // If this item wasn't active, open it
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
+
