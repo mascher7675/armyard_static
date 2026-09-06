@@ -100,8 +100,17 @@ The JavaScript at the bottom handles:
             
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="age">Athlete's Age <span class="required">*</span></label>
-                        <input type="number" id="age" name="age" min="5" max="35" required>
+                        <label for="hearAbout">How did you hear about us? <span class="required">*</span></label>
+                        <select id="hearAbout" name="hearAbout" required>
+                            <option value="" disabled selected>Select one...</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Google Search">Google Search</option>
+                            <option value="Referral / Word of Mouth">Referral / Word of Mouth</option>
+                            <option value="Current or Former Client">Current or Former Client</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
@@ -249,7 +258,7 @@ The JavaScript at the bottom handles:
  
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
-                age: document.getElementById('age').value.trim(),
+                hearAbout: document.getElementById('hearAbout').value,
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value,
                 goals: document.getElementById('goals').value.trim()
