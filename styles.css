@@ -1969,7 +1969,7 @@ a {
  
 .section-block-heading h2 {
   font-family: 'Lato', sans-serif;
-  color: var(--armyard-red);
+  color: var(--text-dark);
   font-size: 2em;
 }
  
@@ -2013,11 +2013,21 @@ a {
 .info-card p:last-child {
   margin-bottom: 0;
 }
+
+.info-card-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+}
  
 .info-card ul {
   list-style: none;
   padding: 0;
-  margin-top: 6px;
+  margin-top: 2px;
+  margin-bottom: 18px;
 }
  
 .info-card li {
