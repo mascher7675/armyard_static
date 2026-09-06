@@ -2009,6 +2009,10 @@ a {
   line-height: 1.7;
   margin-bottom: 16px;
 }
+
+.info-card p.list-label {
+  margin-bottom: 6px;
+}
  
 .info-card p:last-child {
   margin-bottom: 0;
