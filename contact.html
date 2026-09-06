@@ -75,7 +75,7 @@ The JavaScript at the bottom handles:
         <div class="main-contact">
             <div class="contact-header">
                 <h1>Get Started Today</h1>
-                <p>Want to get in touch? Fill out the form below and we'll get back to you to discuss your training goals and how we can help.</p>
+                <p>Have a question or want to get in touch? Fill out the form below and we'll get back to you.</p>
             </div>
             
             <!-- Added message container for feedback -->
@@ -124,8 +124,8 @@ The JavaScript at the bottom handles:
                 </div>
             
                 <div class="form-group full-width">
-                    <label for="goals">What are you looking to get out of the program? <span class="required">*</span></label>
-                    <textarea id="goals" name="goals" placeholder="Please describe your pitching goals, current skill level, any specific areas you'd like to improve, or questions about our training programs..." required></textarea>
+                    <label for="message">How can we help you? <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Tell us what's on your mind — training goals, questions about pricing, rentals, recruiting, or anything else..." required></textarea>
                 </div>
             
                 <p class="form-disclaimer">When you submit this form, we may use your email to send occasional updates. You can opt out anytime.</p>
@@ -261,7 +261,7 @@ The JavaScript at the bottom handles:
                 hearAbout: document.getElementById('hearAbout').value,
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value,
-                goals: document.getElementById('goals').value.trim()
+                message: document.getElementById('message').value.trim()
             };
  
             try {
