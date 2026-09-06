@@ -1876,6 +1876,12 @@ a {
 .staff-bio p:last-child {
   margin-bottom: 0;
 }
+
+.staff-bio-divider {
+  border: none;
+  border-top: 1px solid #e5e0d8;
+  margin: 4px 0 16px;
+}
  
  
 /* ===========================================
