@@ -21,7 +21,7 @@ To edit services:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - The Armyard</title>
-    <meta name="description" content="{% block description %}Real Athletes, Real Results - Helping athletes increase velocity, rehab from injury, and earn college opportunities.{% endblock %}">
+    <meta name="description" content="Real Athletes, Real Results - Helping athletes increase velocity, rehab from injury, and earn college opportunities.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/armyard_logo_circle.png">
@@ -58,11 +58,12 @@ To edit services:
             <!-- Navigation Links -->
             <nav class="nav-menu" id="nav-menu">
                 
-                <a href="/" class="nav-link-home {% if request.path == '/' %}active{% endif %}">Home</a>
-                <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a>
-                <a href="/services" class="nav-link {% if request.path == '/services' %}active{% endif %}">Services</a>
-                <!--<a href="/merch" class="nav-link {% if request.path == '/merch' %}active{% endif %}">Merch</a>!-->
-                <a href="/contact" class="nav-link {% if request.path == '/contact' %}active{% endif %}">Contact</a>
+                <a href="/" class="nav-link-home">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/staff" class="nav-link">Staff</a>
+                <a href="/services" class="nav-link active">Services</a>
+                <a href="/faqs" class="nav-link">FAQ</a>
+                <a href="/contact" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -274,6 +275,163 @@ To edit services:
                 </ul>
             </div>
         </div>
+
+        <!-- ===========================================
+            RENTALS SECTION (Trackman & HitTrax)
+            =========================================== -->
+        <section class="section-block" id="rentals">
+            <div class="section-block-heading">
+                <h2>Rentals: Trackman &amp; HitTrax</h2>
+            </div>
+            <p class="section-lead">
+                Train with the same technology used by college and pro programs. Rent time
+                with our Trackman and HitTrax systems and turn your reps into real, measurable data.
+            </p>
+
+            <div class="info-grid cols-2">
+                <div class="info-card">
+                    <h3>Trackman</h3>
+                    <p>
+                        Trackman uses Doppler radar to track the full flight of every pitch and
+                        batted ball. Instead of guessing, you get precise numbers on exactly how
+                        the ball is moving.
+                    </p>
+                    <p><strong>What it measures:</strong></p>
+                    <ul>
+                        <li>Pitch velocity, spin rate &amp; spin axis</li>
+                        <li>Vertical &amp; horizontal movement (break)</li>
+                        <li>Release point &amp; extension</li>
+                        <li>Exit velocity, launch angle &amp; distance for hitters</li>
+                    </ul>
+                    <p><strong>Why it's beneficial:</strong> Trackman turns training into a measurable process — you can see how each pitch behaves, fine-tune your arsenal, track progress over time, and build the kind of data profile college coaches and scouts want to see.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>HitTrax</h3>
+                    <p>
+                        HitTrax is a hitting simulator and analytics system that captures the
+                        result of every swing and puts it on screen — complete with spray charts
+                        and interactive games that make training competitive and fun.
+                    </p>
+                    <p><strong>What it measures:</strong></p>
+                    <ul>
+                        <li>Exit velocity &amp; launch angle</li>
+                        <li>Projected distance &amp; batted-ball direction</li>
+                        <li>Spray charts &amp; hard-hit tendencies</li>
+                        <li>Session-over-session progress tracking</li>
+                    </ul>
+                    <p><strong>Why it's beneficial:</strong> HitTrax gives hitters instant feedback on the quality of their contact, keeps kids engaged through gamified sessions, and provides objective data to guide swing adjustments.</p>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <div class="cta-row">
+                    <a href="/contact" class="btn-primary">Reserve a Rental</a>
+                    <a href="tel:516-506-5422" class="btn-outline">Call 516-506-5422</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================================
+            RECRUITING SERVICES SECTION
+            =========================================== -->
+        <section class="section-block" id="recruiting">
+            <div class="section-block-heading">
+                <h2>Recruiting Services</h2>
+            </div>
+            <p class="section-lead">
+                Not sure where to start with playing at the next level? We'll help you build a plan.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Guidance Through the Process</h3>
+                    <p>
+                        Schedule a meeting with one of our coaches to put together a list of
+                        potential school options that fit your ability, academics, and goals. From
+                        there, your coach will guide you through the recruiting process so you know
+                        what to do and when to do it.
+                    </p>
+                    <ul>
+                        <li>Sit down with a coach to build your target school list</li>
+                        <li>Understand what each level is looking for</li>
+                        <li>Get guided step-by-step through the recruiting timeline</li>
+                        <li>Use your Trackman &amp; HitTrax data to stand out to coaches</li>
+                    </ul>
+                    <div class="section-cta">
+                        <div class="cta-row">
+                            <a href="/contact" class="btn-primary">Schedule a Meeting</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================================
+            TRAINING PROGRAMS SECTION
+            Commitment plans + remote / hybrid training
+            =========================================== -->
+        <section class="section-block" id="programs">
+            <div class="section-block-heading">
+                <h2>Training Programs</h2>
+            </div>
+            <p class="section-lead">
+                Choose the plan that fits how you want to train — in person, remote, or a mix of both.
+            </p>
+
+            <div class="info-grid cols-2">
+                <div class="info-card">
+                    <h3>Commitment Programs</h3>
+                    <p>
+                        Our commitment programs are built for athletes who are serious about long-term
+                        development. Pick the length that matches your goals and stay on a structured
+                        plan the whole way through.
+                    </p>
+                    <ul>
+                        <li>3-month program</li>
+                        <li>6-month program</li>
+                        <li>12-month program</li>
+                    </ul>
+                    <span class="price-note">Call / Email / DM for pricing</span>
+                </div>
+
+                <div class="info-card">
+                    <h3>Remote &amp; Hybrid Training</h3>
+                    <p>
+                        Can't make it in every week? Train from anywhere with remote programming, or
+                        combine in-person sessions with online coaching through our hybrid plan for
+                        the best of both worlds.
+                    </p>
+                    <ul>
+                        <li>Fully remote training &amp; programming</li>
+                        <li>Hybrid plan: in-person + online coaching</li>
+                        <li>Individualized to your goals and schedule</li>
+                    </ul>
+                    <span class="price-note">Call / Email / DM for pricing</span>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <div class="cta-row">
+                    <a href="/contact" class="btn-primary">Get Program Pricing</a>
+                    <a href="https://www.instagram.com/armyard_" class="btn-outline">DM us @armyard_</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===========================================
+            PHILOSOPHY BAND
+            "This isn't a one-time lesson — it's a career plan"
+            =========================================== -->
+        <section class="philosophy-band">
+            <h2>Not a One-Time Lesson — A Career Plan</h2>
+            <p>
+                We're not here to give you a single lesson and send you on your way. We build a
+                long-term plan around you and stick with you through it — because real, lasting
+                results come from a process, not a one-off session. Our goal is simple: to help
+                you reach yours.
+            </p>
+        </section>
 
         <div class="contact-section">
             <h2>Ready to Train?</h2>

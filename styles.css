@@ -1761,4 +1761,412 @@ a {
   .story-video-wrapper {
     width: 380px;
   }
+} 
+ 
+/* ===========================================
+   14. STAFF PAGE  (Meet the Staff)
+   Click a name to expand their biography.
+=========================================== */
+.staff-list {
+  max-width: 820px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+ 
+.staff-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--armyard-red);
+  transition: box-shadow 0.3s ease;
+}
+ 
+.staff-item:hover {
+  box-shadow: 0 6px 18px rgba(179, 60, 44, 0.18);
+}
+ 
+.staff-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+ 
+.staff-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--armyard-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+ 
+.staff-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.staff-headings {
+  flex: 1;
+  min-width: 0;
+}
+ 
+.staff-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+ 
+.staff-role {
+  color: var(--armyard-red);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+ 
+.staff-toggle {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--armyard-red);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+ 
+.staff-item.open .staff-toggle {
+  transform: rotate(45deg);
+}
+ 
+.staff-bio-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+ 
+.staff-item.open .staff-bio-wrap {
+  max-height: 1200px;
+}
+ 
+.staff-bio {
+  padding: 4px 22px 24px 22px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+ 
+.staff-bio p {
+  margin-bottom: 12px;
+}
+ 
+.staff-bio p:last-child {
+  margin-bottom: 0;
+}
+ 
+ 
+/* ===========================================
+   15. FAQ PAGE
+=========================================== */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+ 
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+ 
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+ 
+.faq-item.open .faq-question {
+  color: var(--armyard-red);
+}
+ 
+.faq-q-icon {
+  color: var(--armyard-red);
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+ 
+.faq-item.open .faq-q-icon {
+  transform: rotate(45deg);
+}
+ 
+.faq-answer-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+ 
+.faq-item.open .faq-answer-wrap {
+  max-height: 800px;
+}
+ 
+.faq-answer {
+  padding: 0 22px 20px 22px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+ 
+.faq-answer a {
+  color: var(--armyard-red);
+  font-weight: 600;
+  text-decoration: underline;
+}
+ 
+ 
+/* ===========================================
+   16. CONTENT SECTIONS
+   Reusable blocks for Rentals / Recruiting /
+   Programs on the Services page. Visible at
+   all screen sizes (mobile-first).
+=========================================== */
+.section-block {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+ 
+.section-block-heading {
+  text-align: center;
+  margin-bottom: 12px;
+}
+ 
+.section-block-heading h2 {
+  font-family: 'Lato', sans-serif;
+  color: var(--armyard-red);
+  font-size: 2em;
+}
+ 
+.section-lead {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 32px;
+  color: var(--text-gray);
+  font-size: 1.1em;
+}
+ 
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+ 
+.info-card {
+  background: white;
+  border-radius: 15px;
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--armyard-red);
+}
+ 
+.info-card h3 {
+  color: var(--armyard-red);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4em;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--armyard-red);
+  padding-bottom: 10px;
+}
+ 
+.info-card p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+ 
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+ 
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+}
+ 
+.info-card li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  color: #666;
+}
+ 
+.info-card li:before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--armyard-red);
+  font-weight: bold;
+}
+ 
+.price-note {
+  display: inline-block;
+  margin-top: 14px;
+  background: rgba(179, 60, 44, 0.08);
+  color: var(--armyard-red);
+  font-weight: 600;
+  font-size: 0.9em;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+ 
+/* Highlight statement: "career plan, not a one-time lesson".
+   Kept light (not solid red) so it doesn't collide with the
+   red "Ready to Train?" call-to-action band that follows it. */
+.philosophy-band {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  color: var(--text-dark);
+  border-radius: 15px;
+  padding: 44px 34px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--armyard-red);
+}
+ 
+.philosophy-band h2 {
+  font-family: 'Lato', sans-serif;
+  color: var(--armyard-red);
+  font-size: 1.7em;
+  margin-bottom: 14px;
+}
+ 
+.philosophy-band p {
+  font-size: 1.1em;
+  color: var(--text-gray);
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+ 
+/* Call-to-action buttons + row */
+.section-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+ 
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+ 
+.btn-primary {
+  display: inline-block;
+  background: var(--armyard-red);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.05em;
+  box-shadow: 0 4px 12px rgba(179, 60, 44, 0.25);
+  transition: all 0.3s ease;
+}
+ 
+.btn-primary:hover {
+  background: #9a2e20;
+  transform: translateY(-2px);
+}
+ 
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--armyard-red);
+  border: 2px solid var(--armyard-red);
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+ 
+.btn-outline:hover {
+  background: var(--armyard-red);
+  color: #fff;
+}
+ 
+ 
+/* ===========================================
+   17. HOMEPAGE INTAKE FORM
+=========================================== */
+.home-intake {
+  padding: 10px 20px 70px;
+}
+ 
+.form-group select {
+  width: 100%;
+  padding: 16px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+ 
+.form-group select:focus {
+  outline: none;
+  border-color: var(--armyard-red);
+}
+ 
+ 
+/* ===========================================
+   18. RESPONSIVE ADDITIONS (new sections)
+=========================================== */
+@media screen and (min-width: 768px) {
+  .info-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .section-block-heading h2 {
+    font-size: 2.4em;
+  }
+ 
+  .philosophy-band h2 {
+    font-size: 2em;
+  }
+}
+ 
+@media screen and (min-width: 769px) {
+  .form-group select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
 }

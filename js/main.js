@@ -62,3 +62,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+
+// ===========================================
+// EXPANDABLE PANELS (Staff bios & FAQ answers)
+// Clicking a header toggles its panel open/closed.
+// Used on the Staff and FAQ pages.
+// ===========================================
+function togglePanel(headerEl) {
+    headerEl.parentElement.classList.toggle('open');
+}
