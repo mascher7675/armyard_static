@@ -1879,7 +1879,8 @@ a {
 
 .staff-bio-divider {
   border: none;
-  width: 48px;
+  width: 100%;
+  max-width: 240px;
   height: 3px;
   background: var(--armyard-red);
   border-radius: 2px;
