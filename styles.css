@@ -2088,7 +2088,8 @@ a {
  
 .philosophy-band h2 {
   font-family: 'Lato', sans-serif;
-  color: var(--armyard-red);
+  /*color: var(--armyard-red);*/
+  color: var(--text-dark);
   font-size: 1.7em;
   margin-bottom: 14px;
 }
