@@ -62,7 +62,8 @@ The JavaScript at the bottom handles:
             <nav class="nav-menu" id="nav-menu">
                 
                 <a href="/" class="nav-link-home">Home</a>
-                <a href="/about" class="nav-link">About</a>
+                <!-- About page hidden from nav (page still exists at about.html) -->
+                <!-- <a href="/about" class="nav-link">About</a> -->
                 <a href="/staff" class="nav-link">Staff</a>
                 <a href="/services" class="nav-link">Services</a>
                 <a href="/faqs" class="nav-link">FAQ</a>
@@ -86,6 +87,8 @@ The JavaScript at the bottom handles:
  
                 <!-- Web3Forms access key -->
                 <input type="hidden" name="access_key" value="eb6d9dd3-7c84-40ba-8ceb-f4674432c825">
+                <!-- Honeypot spam trap (leave empty) -->
+                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
  
                 <div class="form-row">
                     <div class="form-group">
@@ -249,19 +252,27 @@ The JavaScript at the bottom handles:
  
             const firstName = document.getElementById('firstName').value.trim();
             const lastName = document.getElementById('lastName').value.trim();
- 
- 
+            const email = document.getElementById('email').value.trim();
+            const hearAbout = document.getElementById('hearAbout').value;
+
             const payload = {
                 access_key: "eb6d9dd3-7c84-40ba-8ceb-f4674432c825",
-                subject: `New Inquiry from ${firstName} ${lastName}`,
-                from_name: "The Armyard Contact Form",
- 
-                firstName: document.getElementById('firstName').value.trim(),
-                lastName: document.getElementById('lastName').value.trim(),
-                hearAbout: document.getElementById('hearAbout').value,
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value.trim()
+                subject: `New Inquiry from ${firstName} ${lastName} (via ${hearAbout})`,
+                from_name: "The Armyard Website",
+                // Honeypot: real users leave this unchecked (false).
+                // Bots that auto-check it get flagged as spam by Web3Forms.
+                botcheck: document.querySelector('#contactForm [name="botcheck"]').checked,
+                // So hitting "Reply" in the notification email goes
+                // straight back to the person who submitted the form.
+                replyto: email,
+
+                // These keys become the labels shown in the email,
+                // so keep them clean and human-readable.
+                "Name": `${firstName} ${lastName}`,
+                "Email": email,
+                "Phone": document.getElementById('phone').value,
+                "Heard About Us Via": hearAbout,
+                "Message": document.getElementById('message').value.trim()
             };
  
             try {
