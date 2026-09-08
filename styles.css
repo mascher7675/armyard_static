@@ -2157,19 +2157,57 @@ a {
 }
  
 .form-group select {
+  /* Reset native appearance so the dropdown looks the same
+     across Chrome, Firefox, and Safari (desktop + iOS) instead
+     of each browser's default (dated) control. */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
-  padding: 16px 18px;
+  padding: 16px 46px 16px 18px;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
-  background: white;
-  transition: border-color 0.3s ease;
+  color: #333;
+  background-color: #fff;
+  /* Custom chevron drawn in CSS so it renders identically on
+     every browser (Safari doesn't let you style the native one). */
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 13px 8px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+/* Remove the default dropdown arrow in old Edge/IE so it doesn't
+   double up with our custom chevron. */
+.form-group select::-ms-expand {
+  display: none;
+}
+ 
+.form-group select:hover {
+  border-color: #cfcfcf;
 }
  
 .form-group select:focus {
   outline: none;
   border-color: var(--armyard-red);
+  box-shadow: 0 0 0 3px rgba(179, 60, 44, 0.12);
+}
+ 
+/* While the "Select one..." placeholder is showing (select is
+   required and no real option has been chosen yet), mute the
+   text color so it visually matches an input placeholder. This
+   :invalid approach works consistently in Safari, Chrome & Firefox. */
+.form-group select:required:invalid {
+  color: #888;
+}
+ 
+.form-group select option {
+  color: #333;
 }
  
  
@@ -2219,8 +2257,9 @@ a {
 
 @media screen and (min-width: 769px) {
   .form-group select {
-    padding: 12px 15px;
+    padding: 12px 40px 12px 15px;
     font-size: 16px;
     border-radius: 8px;
+    background-position: right 15px center;
   }
 }
