@@ -276,6 +276,66 @@ a {
 }
  
  
+
+/* ===========================================
+   LATEST FROM INSTAGRAM (homepage)
+=========================================== */
+.insta-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.commit-feature {
+  margin: 0 auto 3rem;
+  max-width: 560px;
+}
+
+.commit-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.insta-item {
+  width: 100%;
+  max-width: 540px;
+}
+
+.insta-item .instagram-media {
+  margin: 0 auto !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 540px !important;
+}
+
+.insta-follow {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.insta-follow-btn {
+  width: auto;
+  padding: 15px 40px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.success-stories[hidden] {
+  display: none;
+}
+
 /* ===========================================
    6. SUCCESS STORIES SECTION
 =========================================== */
