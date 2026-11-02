@@ -313,11 +313,14 @@ a {
   max-width: 540px;
 }
 
-.insta-item .instagram-media {
-  margin: 0 auto !important;
-  min-width: 0 !important;
-  width: 100% !important;
-  max-width: 540px !important;
+.insta-embed {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  background: #fff;
 }
 
 .insta-follow {
@@ -325,10 +328,11 @@ a {
   margin-top: 2.5rem;
 }
 
-.insta-follow-btn {
+.insta-follow .insta-follow-btn {
   width: auto;
   padding: 15px 40px;
   display: inline-block;
+  margin: 0;
   text-decoration: none;
 }
 
