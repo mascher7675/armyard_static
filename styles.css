@@ -310,7 +310,7 @@ a {
 
 .section-heading-rule {
   display: block;
-  width: 64px;
+  width: 140px;
   height: 4px;
   margin: 1.1rem auto 1.1rem;
   border-radius: 2px;
@@ -339,19 +339,6 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1rem;
-}
-
-.commit-feature {
-  margin: 0 auto 3rem;
-  max-width: 560px;
-}
-
-.commit-feature img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .insta-grid {
