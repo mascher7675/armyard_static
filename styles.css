@@ -278,6 +278,60 @@ a {
  
 
 /* ===========================================
+   HOMEPAGE SECTION HEADINGS
+   Eyebrow label + title + red accent rule + subtitle.
+   Used by "Latest from The Armyard" and "Get Started".
+=========================================== */
+.section-heading {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+}
+
+.section-eyebrow {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--armyard-red);
+  margin-bottom: 0.6rem;
+}
+
+.section-heading .section-heading-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.section-heading-rule {
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 1.1rem auto 1.1rem;
+  border-radius: 2px;
+  background: var(--armyard-red);
+}
+
+.section-heading .section-heading-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.home-intake .contact-header.section-heading {
+  margin-top: 30px;
+}
+
+
+/* ===========================================
    LATEST FROM INSTAGRAM (homepage)
 =========================================== */
 .insta-section {
