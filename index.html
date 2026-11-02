@@ -95,9 +95,10 @@ To edit:
 
         <!-- ===========================================
             LATEST FROM INSTAGRAM
-            Featured commitment graphic + Instagram embeds.
-            To change a post: edit the URL
-            in the matching iframe src (keep the /embed/ at the end).
+            Featured commitment graphic + a grid of images that link
+            to Instagram posts. To change one: replace the image file in
+            images/instagram/ and update the href to the new post link.
+            Reels get class "insta-tile insta-tile-reel" (adds a play icon).
             =========================================== -->
         <section class="insta-section">
             <h2 class="section-title">Latest from The Armyard</h2>
@@ -107,24 +108,30 @@ To edit:
             </figure>
 
             <div class="insta-grid">
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/p/De2wCvelP2S/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/reel/Deh3wmIPL1W/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/p/Ddz0bN7lORj/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/p/Dde1MkEEUSP/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/reel/DbpDh77h51A/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
-                <div class="insta-item">
-                    <iframe class="insta-embed" src="https://www.instagram.com/p/DaWDxy2FKMu/embed/" height="700" loading="lazy" scrolling="no" allowtransparency="true" allowfullscreen title="Instagram post from The Armyard"></iframe>
-                </div>
+                <a class="insta-tile" href="https://www.instagram.com/p/De2wCvelP2S/" target="_blank" rel="noopener" aria-label="Aidan Ging committed to Sacred Heart University (opens Instagram)">
+                    <img src="images/instagram/ig_1_sacred_heart.jpg" alt="Aidan Ging committed to Sacred Heart University" loading="lazy">
+                    
+                </a>
+                <a class="insta-tile insta-tile-reel" href="https://www.instagram.com/reel/Deh3wmIPL1W/" target="_blank" rel="noopener" aria-label="Matt Purtill, 2029 grad: 73 to 87 mph in one year (opens Instagram)">
+                    <img src="images/instagram/ig_2_matt_purtill.jpg" alt="Matt Purtill, 2029 grad: 73 to 87 mph in one year" loading="lazy">
+                    <span class="insta-play" aria-hidden="true"></span>
+                </a>
+                <a class="insta-tile" href="https://www.instagram.com/p/Ddz0bN7lORj/" target="_blank" rel="noopener" aria-label="Tyler Mazurkiewicz committed to University of Bridgeport (opens Instagram)">
+                    <img src="images/instagram/ig_3_bridgeport.jpg" alt="Tyler Mazurkiewicz committed to University of Bridgeport" loading="lazy">
+                    
+                </a>
+                <a class="insta-tile" href="https://www.instagram.com/p/Dde1MkEEUSP/" target="_blank" rel="noopener" aria-label="Nick Salamone committed to Caldwell University (opens Instagram)">
+                    <img src="images/instagram/ig_4_caldwell.jpg" alt="Nick Salamone committed to Caldwell University" loading="lazy">
+                    
+                </a>
+                <a class="insta-tile insta-tile-reel" href="https://www.instagram.com/reel/DbpDh77h51A/" target="_blank" rel="noopener" aria-label="Dylan Weinstein, Florida Gators commit (opens Instagram)">
+                    <img src="images/instagram/ig_5_dylan_weinstein.jpg" alt="Dylan Weinstein, Florida Gators commit" loading="lazy">
+                    <span class="insta-play" aria-hidden="true"></span>
+                </a>
+                <a class="insta-tile" href="https://www.instagram.com/p/DaWDxy2FKMu/" target="_blank" rel="noopener" aria-label="Lorenzo Cimino committed to Binghamton University (opens Instagram)">
+                    <img src="images/instagram/ig_6_binghamton.jpg" alt="Lorenzo Cimino committed to Binghamton University" loading="lazy">
+                    
+                </a>
             </div>
 
             <p class="insta-follow">
